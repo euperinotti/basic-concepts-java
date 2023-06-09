@@ -23,13 +23,21 @@ public class Alimento extends ProdutoBase implements Vendavel{
   }
 
   @Override
-  public boolean possuiEstoque() {
-    return this.getEstoque() > 0;
+  public boolean checarEstado() {
+    return possuiEstoque() && estaVencido();
   }
 
   @Override
-  public boolean checarEstado() {
-    return possuiEstoque() && estaVencido();
+  public String toString() {
+    return "{" + 
+    super.toString() +
+    " dataDeValidade= " + this.dataDeValidade + "," + 
+    " dataDeFabricacao= " + this.dataDeFabricacao + "," +
+    " lote= " + this.lote + "," + 
+    " pesoEmGramas= " + this.pesoEmGramas + "," +
+    " gluten= " + this.gluten + "," +
+    " lactose= " + this.lactose + "," +
+    "}";
   }
 
   public boolean estaVencido() {

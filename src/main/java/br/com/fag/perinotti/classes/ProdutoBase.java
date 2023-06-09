@@ -13,6 +13,10 @@ public abstract class ProdutoBase {
     this.categoria = this.getClass().getName();
   }
 
+  public boolean possuiEstoque() {
+    return this.getEstoque() > 0;
+  }
+
   public String getNome() {
     return this.nome;
   }

@@ -31,11 +31,6 @@ public class Livro extends ProdutoBase implements Vendavel {
   }
 
   @Override
-  public boolean possuiEstoque() {
-    return this.getEstoque() > 0;
-  }
-
-  @Override
   public boolean checarEstado() {
     return possuiEstoque() && !estaAmassado();
   }
