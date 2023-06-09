@@ -9,10 +9,10 @@ Neste trabalho prático, o objetivo é desenvolver um sistema de cadastro de pro
 
 ## Descrição do projeto
 
-- [ ] Definição das classes do sistema: Produto, Livro, Eletrônico, Alimento;
-- [ ] Utilização de herança para criar uma hierarquia de classes relacionadas aos tipos de produtos;
-- [ ] Implementação de uma interface para definir o comportamento de produtos que podem ser vendidos;
-- [ ] Criação de uma classe abstrata para fornecer comportamentos comuns e propriedades compartilhadas pelas subclasses.
+- [x] Definição das classes do sistema: Produto, Livro, Eletrônico, Alimento;
+- [x] Utilização de herança para criar uma hierarquia de classes relacionadas aos tipos de produtos;
+- [x] Implementação de uma interface para definir o comportamento de produtos que podem ser vendidos;
+- [x] Criação de uma classe abstrata para fornecer comportamentos comuns e propriedades compartilhadas pelas subclasses.
 
 ## Desenvolvimento
 
