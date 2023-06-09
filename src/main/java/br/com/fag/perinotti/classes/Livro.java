@@ -1,6 +1,8 @@
 package br.com.fag.perinotti.classes;
 
-public class Livro extends ProdutoBase {
+import br.com.fag.perinotti.interfaces.Vendavel;
+
+public class Livro extends ProdutoBase implements Vendavel {
   private String autor;
   private String genero;
   private String editora;
@@ -26,5 +28,19 @@ public class Livro extends ProdutoBase {
     " edicao= " + this.edicao + "," +
     " classificacao= " + this.classificacaoIndicativa + "," +
     "}";
+  }
+
+  @Override
+  public boolean possuiEstoque() {
+    return this.getEstoque() > 0;
+  }
+
+  @Override
+  public boolean checarEstado() {
+    return possuiEstoque() && !estaAmassado();
+  }
+
+  public boolean estaAmassado() {
+    return false;
   }
 }
