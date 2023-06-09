@@ -2,10 +2,52 @@ package br.com.fag.perinotti.classes;
 
 public abstract class ProdutoBase {
   private String nome;
-  private Float valor;
+  private Float preco;
+  private String categoria;
+  private Integer estoque;
 
-  public ProdutoBase(String nome, Float valor) {
+  public ProdutoBase(String nome, Float preco, Integer estoque) {
     this.nome = nome;
-    this.valor = valor;
+    this.preco = preco;
+    this.estoque = estoque;
+    this.categoria = this.getClass().getName();
   }
+
+  public String getNome() {
+    return this.nome;
+  }
+
+  public void setNome(String nome) {
+    this.nome = nome;
+  }
+
+  public Float getPreco() {
+    return this.preco;
+  }
+
+  public void setPreco(Float preco) {
+    this.preco = preco;
+  }
+
+  public String getCategoria() {
+    return this.categoria;
+  }
+
+  public Integer getEstoque() {
+    return this.estoque;
+  }
+
+  public void setEstoque(Integer estoque) {
+    this.estoque = estoque;
+  }
+
+  @Override
+  public String toString() {
+    return "{" + 
+    " nome= " + this.nome + "," +
+    " preco= " + this.preco + "," +
+    " estoque= " + this.estoque + "," +
+    " categoria= " + this.categoria + "," +
+    "}";
+  };
 }
