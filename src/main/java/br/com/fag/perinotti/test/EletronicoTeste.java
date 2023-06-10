@@ -1,4 +1,4 @@
-package test;
+package br.com.fag.perinotti.test;
 public class EletronicoTeste {
   
 }

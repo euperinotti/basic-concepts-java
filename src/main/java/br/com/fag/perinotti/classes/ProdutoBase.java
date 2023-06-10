@@ -10,7 +10,7 @@ public abstract class ProdutoBase {
     this.nome = nome;
     this.preco = preco;
     this.estoque = estoque;
-    this.categoria = this.getClass().getName();
+    this.categoria = this.getClass().getSimpleName();
   }
 
   public boolean possuiEstoque() {
@@ -51,7 +51,7 @@ public abstract class ProdutoBase {
     " nome= " + this.nome + "," +
     " preco= " + this.preco + "," +
     " estoque= " + this.estoque + "," +
-    " categoria= " + this.categoria + "," +
+    " categoria= " + this.categoria +
     "}";
   };
 }
