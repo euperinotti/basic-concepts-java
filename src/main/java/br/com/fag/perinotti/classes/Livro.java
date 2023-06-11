@@ -8,6 +8,7 @@ public class Livro extends ProdutoBase implements Vendavel {
   private String editora;
   private String edicao;
   private String classificacaoIndicativa;
+  private boolean amassado;
 
   public Livro(String nome, Float preco, Integer estoque, String autor, String genero, String editora, String edicao, String classificacao) {
     super(nome, preco, estoque);
@@ -16,6 +17,7 @@ public class Livro extends ProdutoBase implements Vendavel {
     this.editora = editora;
     this.edicao = edicao;
     this.classificacaoIndicativa = classificacao;
+    this.amassado = false;
   }
 
   @Override
@@ -32,10 +34,56 @@ public class Livro extends ProdutoBase implements Vendavel {
 
   @Override
   public boolean checarEstado() {
-    return possuiEstoque() && !estaAmassado();
+    return possuiEstoque() && !getAmassado();
   }
 
-  public boolean estaAmassado() {
-    return false;
+  public String getAutor() {
+    return this.autor;
   }
+
+  public void setAutor(String autor) {
+    this.autor = autor;
+  }
+
+  public String getGenero() {
+    return this.genero;
+  }
+
+  public void setGenero(String genero) {
+    this.genero = genero;
+  }
+
+  public String getEditora() {
+    return this.editora;
+  }
+
+  public void setEditora(String editora) {
+    this.editora = editora;
+  }
+
+  public String getEdicao() {
+    return this.edicao;
+  }
+
+  public void setEdicao(String edicao) {
+    this.edicao = edicao;
+  }
+
+  public String getClassificacaoIndicativa() {
+    return this.classificacaoIndicativa;
+  }
+
+  public void setClassificacaoIndicativa(String classificacaoIndicativa) {
+    this.classificacaoIndicativa = classificacaoIndicativa;
+  }
+
+  public boolean getAmassado() {
+    return this.amassado;
+  }
+
+  public void setAmassado(boolean amassado) {
+    this.amassado = amassado;
+  }
+
+
 }

@@ -26,6 +26,14 @@ public class Eletronico extends ProdutoBase implements Vendavel{
     }
   }
 
+  public void verificarBateria() {
+    if(this.funcionaABateria) {
+      System.out.println("O dispositivo tem bateria");
+    } else {
+      System.out.println("O dispositivo não tem bateria");
+    }
+  }
+
   @Override
   public boolean checarEstado() {
     return this.voltagem.equals("110v") || this.voltagem.equals("220v");
@@ -41,6 +49,46 @@ public class Eletronico extends ProdutoBase implements Vendavel{
     " funcionaABateria= " + this.funcionaABateria + "\n" +
     " possuiSeguro= " + this.possuiSeguro +
     "}";
+  }
+
+  public String getNumeroDeSerie() {
+    return this.numeroDeSerie;
+  }
+
+  public void setNumeroDeSerie(String numeroDeSerie) {
+    this.numeroDeSerie = numeroDeSerie;
+  }
+
+  public String getMarca() {
+    return this.marca;
+  }
+
+  public void setMarca(String marca) {
+    this.marca = marca;
+  }
+
+  public String getVoltagem() {
+    return this.voltagem;
+  }
+
+  public void setVoltagem(String voltagem) {
+    this.voltagem = voltagem;
+  }
+
+  public boolean getFuncionaABateria() {
+    return this.funcionaABateria;
+  }
+
+  public void setFuncionaABateria(boolean funcionaABateria) {
+    this.funcionaABateria = funcionaABateria;
+  }
+
+  public boolean getPossuiSeguro() {
+    return this.possuiSeguro;
+  }
+
+  public void setPossuiSeguro(boolean possuiSeguro) {
+    this.possuiSeguro = possuiSeguro;
   }
   
 }

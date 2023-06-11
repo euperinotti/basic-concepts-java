@@ -28,5 +28,29 @@ public class Produto extends ProdutoBase implements Vendavel {
     " alcoolico= " + this.alcoolico + 
     "}";
   }
-  
+
+  public boolean getInflamavel() {
+    return this.inflamavel;
+  }
+
+  public void setInflamavel(boolean inflamavel) {
+    this.inflamavel = inflamavel;
+  }
+
+  public boolean getToxico() {
+    return this.toxico;
+  }
+
+  public void setToxico(boolean toxico) {
+    this.toxico = toxico;
+  }
+
+  public boolean getAlcoolico() {
+    return this.alcoolico;
+  }
+
+  public void setAlcoolico(boolean alcoolico) {
+    this.alcoolico = alcoolico;
+  }
+
 }
