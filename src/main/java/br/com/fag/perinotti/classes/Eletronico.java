@@ -18,6 +18,14 @@ public class Eletronico extends ProdutoBase implements Vendavel{
     this.possuiSeguro = possuiSeguro;
   }
 
+  public void ligar(String voltagem) {
+    if (voltagem.equals(this.voltagem)) {
+      System.out.println("Dispositivo ligado");
+    } else {
+      System.out.println("Voltagem incompatível");
+    }
+  }
+
   @Override
   public boolean checarEstado() {
     return this.voltagem.equals("110v") || this.voltagem.equals("220v");
@@ -27,10 +35,10 @@ public class Eletronico extends ProdutoBase implements Vendavel{
   public String toString() {
     return "{" + 
     super.toString() +
-    " numeroDeSerie= " + this.numeroDeSerie + "," + 
-    " marca= " + this.marca + "," +
-    " voltagem= " + this.voltagem + "," + 
-    " funcionaABateria= " + this.funcionaABateria + "," +
+    "\nnumeroDeSerie= " + this.numeroDeSerie + "\n" + 
+    " marca= " + this.marca + "\n" +
+    " voltagem= " + this.voltagem + "\n" + 
+    " funcionaABateria= " + this.funcionaABateria + "\n" +
     " possuiSeguro= " + this.possuiSeguro +
     "}";
   }

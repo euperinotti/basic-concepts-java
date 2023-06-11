@@ -79,6 +79,5 @@ public class Alimento extends ProdutoBase implements Vendavel{
   public void setLactose(boolean lactose) {
     this.lactose = lactose;
   }
-
   
 }
