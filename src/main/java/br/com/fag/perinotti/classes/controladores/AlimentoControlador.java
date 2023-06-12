@@ -55,16 +55,14 @@ public class AlimentoControlador implements Controller {
     Alimento novoAlimento = new Alimento(nome, pesoEmGramas, estoque, dataDeValidade, dataDeFabricacao, lote, pesoEmGramas, gluten, lactose);
 
     this.catalogo.add(novoAlimento);
-
-    return; 
   }
 
   @Override
-  public <E extends ProdutoBase> Class<Alimento> buscarUm(int codigo) {
-    Alimento elemento = null;
+  public <T extends ProdutoBase> T buscarUm(int codigo) {
+    T elemento = null;
     for (Alimento alimento : catalogo) {
       if(alimento.getCodigo() == codigo) {
-        elemento = alimento;
+        return alimento;
       }
     }
 

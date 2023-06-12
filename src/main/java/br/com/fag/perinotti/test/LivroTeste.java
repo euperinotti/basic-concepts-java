@@ -1,8 +1,5 @@
 package br.com.fag.perinotti.test;
 
-import java.util.ArrayList;
-
-import br.com.fag.perinotti.classes.catalogos.CatalogoLivro;
 import br.com.fag.perinotti.classes.produtos.Livro;
 import br.com.fag.perinotti.enums.EnumFormatoDoLivro;
 
@@ -15,8 +12,6 @@ public class LivroTeste {
     System.out.println(livroTeste.getCategoria());
     System.out.println(livroTeste.possuiEstoque());
     System.out.println("Vendavel...: " + livroTeste.checarEstado());
-
-    ArrayList<Livro> catalogo = CatalogoLivro.catalago();
 
   }
 }

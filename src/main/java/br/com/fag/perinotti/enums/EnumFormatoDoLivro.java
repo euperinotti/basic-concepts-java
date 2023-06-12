@@ -9,4 +9,8 @@ public enum EnumFormatoDoLivro {
   private EnumFormatoDoLivro(String formato) {
     this.formato = formato;
   }
+
+  public String getFormato() {
+    return this.formato;
+  }
 }
