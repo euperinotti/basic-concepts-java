@@ -1,5 +1,6 @@
 package br.com.fag.perinotti.classes;
 
+import br.com.fag.perinotti.enums.EnumFormatoDoLivro;
 import br.com.fag.perinotti.interfaces.Vendavel;
 
 public class Livro extends ProdutoBase implements Vendavel {
@@ -8,9 +9,11 @@ public class Livro extends ProdutoBase implements Vendavel {
   private String editora;
   private String edicao;
   private String classificacaoIndicativa;
+  private EnumFormatoDoLivro formato;
+  private int numeroDePaginas;
   private boolean amassado;
 
-  public Livro(String nome, Float preco, Integer estoque, String autor, String genero, String editora, String edicao, String classificacao) {
+  public Livro(String nome, Float preco, Integer estoque, String autor, String genero, String editora, String edicao, String classificacao, EnumFormatoDoLivro formato, int numeroDePaginas) {
     super(nome, preco, estoque);
     this.autor = autor;
     this.genero = genero;
@@ -18,6 +21,8 @@ public class Livro extends ProdutoBase implements Vendavel {
     this.edicao = edicao;
     this.classificacaoIndicativa = classificacao;
     this.amassado = false;
+    this.formato = formato;
+    this.numeroDePaginas = numeroDePaginas;
   }
 
   @Override
@@ -35,6 +40,26 @@ public class Livro extends ProdutoBase implements Vendavel {
   @Override
   public boolean checarEstado() {
     return possuiEstoque() && !getAmassado();
+  }
+
+  public EnumFormatoDoLivro getFormato() {
+    return this.formato;
+  }
+
+  public void setFormato(EnumFormatoDoLivro formato) {
+    this.formato = formato;
+  }
+
+  public int getNumeroDePaginas() {
+    return this.numeroDePaginas;
+  }
+
+  public void setNumeroDePaginas(int numeroDePaginas) {
+    this.numeroDePaginas = numeroDePaginas;
+  }
+
+  public boolean isAmassado() {
+    return this.amassado;
   }
 
   public String getAutor() {
