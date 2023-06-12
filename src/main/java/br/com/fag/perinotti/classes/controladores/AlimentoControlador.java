@@ -111,8 +111,11 @@ public class AlimentoControlador implements Controller {
     for (Alimento alimento : catalogo) {
       if(alimento.getCodigo() == codigo) {
         catalogo.remove(alimento);
+        System.out.println("Elemento removido");
+        break;
       }
     }
+    System.out.println(this.catalogo.toString());
   }
   
 }

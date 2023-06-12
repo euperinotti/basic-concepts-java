@@ -23,5 +23,7 @@ public class AlimentoTeste {
     Alimento alimento = alimentoController.buscar(1); 
 
     System.out.println(alimento.getNome());
+
+    alimentoController.excluir(1);
   }
 }
