@@ -48,8 +48,16 @@ public class Alimento extends ProdutoBase implements Vendavel{
     return this.dataDeValidade;
   }
 
+  public void setDataDeValidade(LocalDate data) {
+    this.dataDeValidade = data;
+  }
+
   public LocalDate getDataDeFabricacao() {
     return this.dataDeFabricacao;
+  }
+
+  public void setDataDeFabricacao(LocalDate data) {
+    this.dataDeFabricacao = data;
   }
 
   public String getLote() {

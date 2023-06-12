@@ -12,6 +12,8 @@ public class AlimentoTeste {
     System.out.println(novoAlimento.possuiEstoque());
     System.out.println(novoAlimento.estaVencido());
 
-    novoAlimento.checarEstado();
+    novoAlimento.setDataDeValidade(LocalDate.of(2020, 2, 1));
+
+    System.out.println(novoAlimento.estaVencido());
   }
 }
