@@ -22,14 +22,14 @@ public class Livro extends ProdutoBase implements Vendavel {
 
   @Override
   public String toString() {
-    return "{" + 
+    return "{\n" + 
     super.toString() +
-    " autor= " + this.autor + "," + 
-    " genero= " + this.genero + "," +
-    " editora= " + this.editora + "," + 
-    " edicao= " + this.edicao + "," +
-    " classificacao= " + this.classificacaoIndicativa + "," +
-    "}";
+    "autor: " + this.autor + "\n" + 
+    "genero: " + this.genero + "\n" +
+    "editora: " + this.editora + "\n" + 
+    "edicao: " + this.edicao + "\n" +
+    "classificacao: " + this.classificacaoIndicativa + "\n" +
+    "}\n";
   }
 
   @Override
