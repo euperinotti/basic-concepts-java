@@ -60,9 +60,15 @@ public class AlimentoControlador implements Controller {
   }
 
   @Override
-  public Class<? extends ProdutoBase> buscarUm(int codigo) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'buscarUm'");
+  public <E extends ProdutoBase> Class<Alimento> buscarUm(int codigo) {
+    Alimento elemento = null;
+    for (Alimento alimento : catalogo) {
+      if(alimento.getCodigo() == codigo) {
+        elemento = alimento;
+      }
+    }
+
+    return elemento;
   }
 
   @Override

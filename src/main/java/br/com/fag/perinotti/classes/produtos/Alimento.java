@@ -5,6 +5,8 @@ import java.time.LocalDate;
 import br.com.fag.perinotti.interfaces.Vendavel;
 
 public class Alimento extends ProdutoBase implements Vendavel{
+  private int codigo;
+  private static int proximoCodigo = 1;
   private LocalDate dataDeValidade;
   private LocalDate dataDeFabricacao;
   private String lote;
@@ -20,6 +22,7 @@ public class Alimento extends ProdutoBase implements Vendavel{
     this.pesoEmGramas = pesoEmGramas;
     this.gluten = gluten;
     this.lactose = lactose;
+    this.codigo = proximoCodigo++;
   }
 
   public Alimento(String nome, Float preco, Integer estoque, LocalDate dataDeValidade, Float pesoEmGramas, boolean gluten, boolean lactose) {
@@ -28,6 +31,7 @@ public class Alimento extends ProdutoBase implements Vendavel{
     this.pesoEmGramas = pesoEmGramas;
     this.gluten = gluten;
     this.lactose = lactose;
+    this.codigo = proximoCodigo++;
   }
 
   public Alimento(String nome, Float preco, Integer estoque, LocalDate dataDeValidade, Float pesoEmGramas) {
@@ -36,6 +40,7 @@ public class Alimento extends ProdutoBase implements Vendavel{
     this.pesoEmGramas = pesoEmGramas;
     this.gluten = false;
     this.lactose = false;
+    this.codigo = proximoCodigo++;
   }
 
   @Override
@@ -58,6 +63,10 @@ public class Alimento extends ProdutoBase implements Vendavel{
 
   public boolean estaVencido() {
     return LocalDate.now().isAfter(dataDeValidade);
+  }
+
+  public int getCodigo() {
+    return this.codigo;
   }
 
   public LocalDate getDataDeValidade() {
