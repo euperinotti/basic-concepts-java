@@ -1,15 +1,16 @@
 package br.com.fag.perinotti.classes;
 
+import br.com.fag.perinotti.enums.EnumVoltagem;
 import br.com.fag.perinotti.interfaces.Vendavel;
 
 public class Eletronico extends ProdutoBase implements Vendavel{
   private String numeroDeSerie;
   private String marca;
-  private String voltagem;
+  private EnumVoltagem voltagem;
   private boolean funcionaABateria;
   private boolean possuiSeguro;
 
-  public Eletronico(String nome, Float preco, Integer estoque, String numeroDeSerie, String marca, String voltagem, boolean funcionaABateria, boolean possuiSeguro) {
+  public Eletronico(String nome, Float preco, Integer estoque, String numeroDeSerie, String marca, EnumVoltagem voltagem, boolean funcionaABateria, boolean possuiSeguro) {
     super(nome, preco, estoque);
     this.numeroDeSerie = numeroDeSerie;
     this.marca = marca;
@@ -18,7 +19,7 @@ public class Eletronico extends ProdutoBase implements Vendavel{
     this.possuiSeguro = possuiSeguro;
   }
 
-  public void ligar(String voltagem) {
+  public void ligar(EnumVoltagem voltagem) {
     if (voltagem.equals(this.voltagem)) {
       System.out.println("Dispositivo ligado");
     } else {
@@ -67,11 +68,11 @@ public class Eletronico extends ProdutoBase implements Vendavel{
     this.marca = marca;
   }
 
-  public String getVoltagem() {
+  public EnumVoltagem getVoltagem() {
     return this.voltagem;
   }
 
-  public void setVoltagem(String voltagem) {
+  public void setVoltagem(EnumVoltagem voltagem) {
     this.voltagem = voltagem;
   }
 
