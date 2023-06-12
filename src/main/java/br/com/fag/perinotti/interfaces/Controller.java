@@ -1,0 +1,17 @@
+package br.com.fag.perinotti.interfaces;
+
+import java.util.ArrayList;
+
+import br.com.fag.perinotti.classes.ProdutoBase;
+
+public interface Controller {
+  public void criar();
+
+  public Class<? extends ProdutoBase> buscarUm(int codigo);
+
+  public ArrayList<? extends ProdutoBase> buscarTodos();
+
+  public Class<? extends ProdutoBase> editar(int codigo, Class<? extends ProdutoBase> produto);
+
+  public void excluir(int codigo);
+}
