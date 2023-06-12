@@ -1,12 +1,10 @@
 package br.com.fag.perinotti;
 
-import br.com.fag.perinotti.classes.Livro;
+import br.com.fag.perinotti.utils.Mensagem;
 
 public final class App {
-    public void main(String[] args) {
-        System.out.println("Hello World!");
-        Livro novoProduto = new Livro("Produto", 25.9f, 100, "eu", "romance", "saraiva", "3", "16+");
-
-        System.out.println(novoProduto.getClass().getDeclaredFields()[0].getName());
-    }
+  public void main(String[] args) {
+    Mensagem.mensagem("Bem vindo ao sistema de cadastro de produtos");
+    Mensagem.mensagem("Escolha o tipo de produto para administrar");
+  }
 }
