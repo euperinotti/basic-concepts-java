@@ -4,8 +4,8 @@ Neste trabalho prático, o objetivo é desenvolver um sistema de cadastro de pro
 
 ## Introdução
 
-- [ ] Apresentação do tema: Desenvolvimento de um sistema de cadastro de produtos utilizando herança, polimorfismo, interface e classe abstrata em Java
-- [ ] Objetivos do trabalho prático
+- [x] Apresentação do tema: Desenvolvimento de um sistema de cadastro de produtos utilizando herança, polimorfismo, interface e classe abstrata em Java
+- [x] Objetivos do trabalho prático
 
 ## Descrição do projeto
 
@@ -16,17 +16,16 @@ Neste trabalho prático, o objetivo é desenvolver um sistema de cadastro de pro
 
 ## Desenvolvimento
 
-- [ ] Implementação das classes de Produto, Livro, Eletrônico, Alimento, que herdam da classe abstrata ProdutoBase e implementam a interface Vendavel;
-- [ ] Definição de atributos e métodos específicos para cada tipo de produto;
-- [ ] Demonstração do polimorfismo ao utilizar objetos das subclasses como objetos da classe base;
+- [x] Implementação das classes de Produto, Livro, Eletrônico, Alimento, que herdam da classe abstrata ProdutoBase e implementam a interface Vendavel;
+- [x] Definição de atributos e métodos específicos para cada tipo de produto;
+- [x] Demonstração do polimorfismo ao utilizar objetos das subclasses como objetos da classe base;
 - [ ] Implementação de funcionalidades adicionais, como cálculo de preço com desconto, busca de produtos, entre outros.
 
 ## Testes e resultados
 
 - [ ] Realização de testes para verificar o funcionamento correto do sistema;
 - [ ] Análise dos resultados obtidos e verificação do uso correto dos conceitos de herança, polimorfismo, interface e classe abstrata;
-- [ ] Discussão sobre as vantagens e benefícios da aplicação desses conceitos no projeto.
-
+- [x] Discussão sobre as vantagens e benefícios da aplicação desses conceitos no projeto.
 
 ## Conclusão
 
