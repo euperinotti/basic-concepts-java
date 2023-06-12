@@ -41,14 +41,14 @@ public class Eletronico extends ProdutoBase implements Vendavel{
 
   @Override
   public String toString() {
-    return "{" + 
+    return "{\n" + 
     super.toString() +
-    "\nnumeroDeSerie= " + this.numeroDeSerie + "\n" + 
-    " marca= " + this.marca + "\n" +
-    " voltagem= " + this.voltagem + "\n" + 
-    " funcionaABateria= " + this.funcionaABateria + "\n" +
-    " possuiSeguro= " + this.possuiSeguro +
-    "}";
+    "numeroDeSerie: " + this.numeroDeSerie + "\n" + 
+    "marca: " + this.marca + "\n" +
+    "voltagem: " + this.voltagem + "\n" + 
+    "funcionaABateria: " + this.funcionaABateria + "\n" +
+    "possuiSeguro: " + this.possuiSeguro +
+    "\n}\n";
   }
 
   public String getNumeroDeSerie() {

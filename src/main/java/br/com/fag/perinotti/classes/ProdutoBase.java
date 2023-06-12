@@ -48,10 +48,10 @@ public abstract class ProdutoBase {
   @Override
   public String toString() {
     return "{\n" + 
-    " nome= " + this.nome + "\n" +
-    " preco= " + this.preco + "\n" +
-    " estoque= " + this.estoque + "\n" +
-    " categoria= " + this.categoria +
-    "}";
+    "nome: " + this.nome + "\n" +
+    "preco: " + this.preco + "\n" +
+    "estoque: " + this.estoque + "\n" +
+    "categoria: " + this.categoria +
+    "\n}\n";
   };
 }

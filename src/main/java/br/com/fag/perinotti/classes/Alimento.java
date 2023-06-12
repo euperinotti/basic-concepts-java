@@ -31,13 +31,13 @@ public class Alimento extends ProdutoBase implements Vendavel{
   public String toString() {
     return "{" + 
     super.toString() +
-    " dataDeValidade= " + this.dataDeValidade + "\n" + 
-    " dataDeFabricacao= " + this.dataDeFabricacao + "\n" +
-    " lote= " + this.lote + "," + 
-    " pesoEmGramas= " + this.pesoEmGramas + "\n" +
-    " gluten= " + this.gluten + "\n" +
-    " lactose= " + this.lactose + "\n" +
-    "}";
+    "dataDeValidade: " + this.dataDeValidade + "\n" + 
+    "dataDeFabricacao: " + this.dataDeFabricacao + "\n" +
+    "lote: " + this.lote + "," + 
+    "pesoEmGramas: " + this.pesoEmGramas + "\n" +
+    "gluten: " + this.gluten + "\n" +
+    "lactose: " + this.lactose +
+    "\n}\n";
   }
 
   public boolean estaVencido() {
