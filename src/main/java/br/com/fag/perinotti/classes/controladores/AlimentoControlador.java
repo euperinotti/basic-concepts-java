@@ -58,15 +58,13 @@ public class AlimentoControlador implements Controller {
   }
 
   @Override
-  public <T extends ProdutoBase> T buscarUm(int codigo) {
-    T elemento = null;
+  public <T> T buscar(int codigo) {
     for (Alimento alimento : catalogo) {
       if(alimento.getCodigo() == codigo) {
-        return alimento;
+        return (T) alimento;
       }
     }
-
-    return elemento;
+    return null;
   }
 
   @Override
@@ -75,15 +73,46 @@ public class AlimentoControlador implements Controller {
   }
 
   @Override
-  public Class<? extends ProdutoBase> editar(int codigo, Class<? extends ProdutoBase> produto) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'editar'");
+  public <T> T editar(int codigo) {
+    Scanner scanner = new Scanner(System.in);
+    Alimento alimento = buscar(codigo);
+
+    Mensagem.mensagemComInput("Informe o nome do alimento");
+    alimento.setNome(scanner.next());
+
+    Mensagem.mensagemComInput("Informe o peso do alimento (em gramas)");
+    alimento.setPesoEmGramas(scanner.nextFloat());
+
+    Mensagem.mensagemComInput("Informe a quantidade desse alimento em estoque");
+    alimento.setEstoque(scanner.nextInt());
+    
+    scanner.nextLine();
+
+    Mensagem.mensagemComInput("Informe a data de validade do alimento");
+    alimento.setDataDeValidade(LocalDate.parse(scanner.nextLine(), DateTimeFormatter.ofPattern("dd/MM/yyyy")));
+
+    Mensagem.mensagemComInput("Informe a data de fabricação do alimento");
+    alimento.setDataDeFabricacao(LocalDate.parse(scanner.nextLine(), DateTimeFormatter.ofPattern("dd/MM/yyyy")));
+
+    Mensagem.mensagemComInput("Informe o lote de produção");
+    alimento.setLote(scanner.next());
+
+    Mensagem.mensagemComInput("O alimento possui gluten?");
+    alimento.setGluten(scanner.nextBoolean());
+
+    Mensagem.mensagemComInput("O alimento possui lactose?");
+    alimento.setLactose(scanner.nextBoolean());
+
+    return (T) alimento;
   }
 
   @Override
   public void excluir(int codigo) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'excluir'");
+    for (Alimento alimento : catalogo) {
+      if(alimento.getCodigo() == codigo) {
+        catalogo.remove(alimento);
+      }
+    }
   }
   
 }

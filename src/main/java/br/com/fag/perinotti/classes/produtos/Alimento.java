@@ -85,6 +85,10 @@ public class Alimento extends ProdutoBase implements Vendavel{
     this.dataDeFabricacao = data;
   }
 
+  public void setLote(String lote) {
+    this.lote = lote;
+  }
+
   public String getLote() {
     return this.lote;
   }

@@ -7,11 +7,11 @@ import br.com.fag.perinotti.classes.produtos.ProdutoBase;
 public interface Controller {
   public void criar();
 
-  public <T extends ProdutoBase> T buscarUm(int codigo);
+  public <T> T buscar(int codigo);
 
   public ArrayList<? extends ProdutoBase> buscarTodos();
 
-  public Class<? extends ProdutoBase> editar(int codigo, Class<? extends ProdutoBase> produto);
+  public <T> T editar(int codigo);
 
   public void excluir(int codigo);
 }
