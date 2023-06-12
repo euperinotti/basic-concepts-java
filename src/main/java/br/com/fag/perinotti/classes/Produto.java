@@ -3,6 +3,8 @@ package br.com.fag.perinotti.classes;
 import br.com.fag.perinotti.interfaces.Vendavel;
 
 public class Produto extends ProdutoBase implements Vendavel {
+  private int codigo;
+  private static  int proximoCodigo = 0;
   private boolean inflamavel;
   private boolean toxico;
   private boolean alcoolico;
@@ -12,6 +14,7 @@ public class Produto extends ProdutoBase implements Vendavel {
     this.inflamavel = inflamavel;
     this.toxico = toxico;
     this.alcoolico = alcoolico;
+    this.codigo = ++proximoCodigo;
   }
 
   @Override
@@ -27,6 +30,10 @@ public class Produto extends ProdutoBase implements Vendavel {
     " toxico= " + this.toxico + "," +
     " alcoolico= " + this.alcoolico + 
     "}";
+  }
+  
+  public int getCodigo() {
+    return this.codigo;
   }
 
   public boolean getInflamavel() {
