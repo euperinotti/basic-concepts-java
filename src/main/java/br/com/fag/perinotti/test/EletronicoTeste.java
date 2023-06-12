@@ -1,6 +1,6 @@
 package br.com.fag.perinotti.test;
 
-import br.com.fag.perinotti.classes.Eletronico;
+import br.com.fag.perinotti.classes.produtos.Eletronico;
 import br.com.fag.perinotti.enums.EnumVoltagem;
 
 public class EletronicoTeste {

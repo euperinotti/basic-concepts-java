@@ -2,7 +2,7 @@ package br.com.fag.perinotti.test;
 
 import java.time.LocalDate;
 
-import br.com.fag.perinotti.classes.Alimento;
+import br.com.fag.perinotti.classes.produtos.Alimento;
 
 public class AlimentoTeste {
   public static void main(String[] args) {

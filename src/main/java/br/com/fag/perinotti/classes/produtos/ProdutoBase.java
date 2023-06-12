@@ -1,4 +1,4 @@
-package br.com.fag.perinotti.classes;
+package br.com.fag.perinotti.classes.produtos;
 
 public abstract class ProdutoBase {
   private String nome;

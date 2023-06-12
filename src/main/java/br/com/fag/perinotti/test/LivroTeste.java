@@ -1,6 +1,6 @@
 package br.com.fag.perinotti.test;
 
-import br.com.fag.perinotti.classes.Livro;
+import br.com.fag.perinotti.classes.produtos.Livro;
 
 public class LivroTeste {
   public static void main(String[] args) {

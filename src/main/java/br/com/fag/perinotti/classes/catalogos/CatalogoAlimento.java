@@ -3,7 +3,7 @@ package br.com.fag.perinotti.classes.catalogos;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-import br.com.fag.perinotti.classes.Alimento;
+import br.com.fag.perinotti.classes.produtos.Alimento;
 
 public class CatalogoAlimento {
   public static ArrayList<Alimento> catalago() {

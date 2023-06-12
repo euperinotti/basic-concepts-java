@@ -5,9 +5,9 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import br.com.fag.perinotti.classes.Alimento;
-import br.com.fag.perinotti.classes.ProdutoBase;
 import br.com.fag.perinotti.classes.catalogos.CatalogoAlimento;
+import br.com.fag.perinotti.classes.produtos.Alimento;
+import br.com.fag.perinotti.classes.produtos.ProdutoBase;
 import br.com.fag.perinotti.interfaces.Controller;
 import br.com.fag.perinotti.utils.Mensagem;
 

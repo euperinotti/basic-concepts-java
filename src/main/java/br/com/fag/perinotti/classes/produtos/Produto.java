@@ -1,4 +1,4 @@
-package br.com.fag.perinotti.classes;
+package br.com.fag.perinotti.classes.produtos;
 
 import br.com.fag.perinotti.interfaces.Vendavel;
 

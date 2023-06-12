@@ -2,7 +2,7 @@ package br.com.fag.perinotti.interfaces;
 
 import java.util.ArrayList;
 
-import br.com.fag.perinotti.classes.ProdutoBase;
+import br.com.fag.perinotti.classes.produtos.ProdutoBase;
 
 public interface Controller {
   public void criar();

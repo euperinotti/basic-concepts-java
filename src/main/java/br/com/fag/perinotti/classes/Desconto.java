@@ -2,22 +2,24 @@ package br.com.fag.perinotti.classes;
 
 import java.util.ArrayList;
 
+import br.com.fag.perinotti.classes.produtos.ProdutoBase;
 import br.com.fag.perinotti.interfaces.IDesconto;
 
-public class Desconto implements IDesconto {
+public abstract class Desconto implements IDesconto {
+  private Desconto proximoDesconto;
 
-  public abstract boolean deveAplicar() {}
+  public abstract boolean deveAplicar();
 
   @Override
   public Float verificarSituacao(ArrayList<? extends ProdutoBase> produtos) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'verificarSituacao'");
+    if (deveAplicar()) {
+      return calcular(produtos);
+    }
+
+    return proximoDesconto.verificarSituacao(produtos);
   }
 
   @Override
-  public Float calcular(ArrayList<? extends ProdutoBase> produtos) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'calcular'");
-  }
+  public abstract Float calcular(ArrayList<? extends ProdutoBase> produtos);
   
 }
