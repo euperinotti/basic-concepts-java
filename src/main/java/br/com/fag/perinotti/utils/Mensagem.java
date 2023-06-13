@@ -14,6 +14,15 @@ public class Mensagem {
     }
   }
 
+  public static void exibirMensagemComOpcoes(String[] array, String mensagem) {
+    int i;
+    mensagem(mensagem);
+    for (i = 0; i < array.length; i++) {
+      System.out.println("[" + (i + 1) + "] " + array[i]);
+    }
+    Mensagem.campoDeInput();
+  }
+
   public static void mensagemComInput(String msg) {
     mensagem(msg);
     campoDeInput();

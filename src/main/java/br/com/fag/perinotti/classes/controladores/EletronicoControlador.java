@@ -1,18 +1,18 @@
 package br.com.fag.perinotti.classes.controladores;
 
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import br.com.fag.perinotti.classes.produtos.Alimento;
+import br.com.fag.perinotti.classes.catalogos.CatalogoEletronico;
 import br.com.fag.perinotti.classes.produtos.Eletronico;
 import br.com.fag.perinotti.classes.produtos.ProdutoBase;
 import br.com.fag.perinotti.enums.EnumVoltagem;
 import br.com.fag.perinotti.interfaces.Controller;
 import br.com.fag.perinotti.utils.Mensagem;
+import br.com.fag.perinotti.utils.Terminal;
 
 public class EletronicoControlador implements Controller {
+  private ArrayList<Eletronico> catalogo = CatalogoEletronico.catalago();
   
   @Override
   public void criar() {
@@ -33,35 +33,35 @@ public class EletronicoControlador implements Controller {
     preco = scanner.nextFloat();
 
     Mensagem.mensagemComInput("Informe a quantidade desse eletronico em estoque");
-    estoque = scanner.nextInt();
+    estoque = Terminal.validarInteiro(scanner);
     
     scanner.nextLine();
 
-    Mensagem.mensagemComInput("Informe a data de validade do alimento");
-    dataDeValidade = LocalDate.parse(scanner.nextLine(), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+    Mensagem.mensagemComInput("Informe o numero de serie do eletronico");
+    numeroDeSerie = scanner.nextLine();
 
-    Mensagem.mensagemComInput("Informe a data de fabricação do alimento");
-    dataDeFabricacao = LocalDate.parse(scanner.nextLine(), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+    Mensagem.mensagemComInput("Informe a marca do eletronico");
+    marca = scanner.nextLine();
 
-    Mensagem.mensagemComInput("Informe o lote de produção");
-    lote = scanner.next();
+    Mensagem.exibirMensagemComOpcoes(EnumVoltagem.getAll(), "Escolha voltagem do eletronico");
+    voltagem = EnumVoltagem.values()[Terminal.validarInteiro(scanner) - 1];
 
-    Mensagem.mensagemComInput("O alimento possui gluten?");
-    gluten = scanner.nextBoolean();
+    Mensagem.mensagemComInput("O eletronico funciona a bateria?");
+    funcionaABateria = scanner.nextBoolean();
 
-    Mensagem.mensagemComInput("O alimento possui lactose?");
-    lactose = scanner.nextBoolean();
+    Mensagem.mensagemComInput("O eletronico possui seguro?");
+    possuiSeguro = scanner.nextBoolean();
 
-    Eletronico novoEletronico = new Eletronico(nome, pesoEmGramas, null, nome, lote, null, lactose);
+    Eletronico novoEletronico = new Eletronico(nome, preco, estoque, numeroDeSerie, marca, voltagem, funcionaABateria, possuiSeguro);
 
-    this.catalogo.add(novoAlimento);
+    this.catalogo.add(novoEletronico);
   }
 
   @Override
   public <T> T buscar(int codigo) {
-    for (Alimento alimento : catalogo) {
-      if(alimento.getCodigo() == codigo) {
-        return (T) alimento;
+    for (Eletronico eletronico : catalogo) {
+      if(eletronico.getCodigo() == codigo) {
+        return (T) eletronico;
       }
     }
     return null;
@@ -75,47 +75,45 @@ public class EletronicoControlador implements Controller {
   @Override
   public <T> T editar(int codigo) {
     Scanner scanner = new Scanner(System.in);
-    Alimento alimento = buscar(codigo);
+    Eletronico eletronico = buscar(codigo);
 
-    Mensagem.mensagemComInput("Informe o nome do alimento");
-    alimento.setNome(scanner.next());
+    Mensagem.mensagemComInput("Informe o nome do eletronico");
+    eletronico.setNome(scanner.next());
 
-    Mensagem.mensagemComInput("Informe o peso do alimento (em gramas)");
-    alimento.setPesoEmGramas(scanner.nextFloat());
+    Mensagem.mensagemComInput("Informe o preco do eletronico");
+    eletronico.setPreco(scanner.nextFloat());
 
-    Mensagem.mensagemComInput("Informe a quantidade desse alimento em estoque");
-    alimento.setEstoque(scanner.nextInt());
-    
-    scanner.nextLine();
+    Mensagem.mensagemComInput("Informe a quantidade desse eletronico em estoque");
+    eletronico.setEstoque(Terminal.validarInteiro(scanner));
 
-    Mensagem.mensagemComInput("Informe a data de validade do alimento");
-    alimento.setDataDeValidade(LocalDate.parse(scanner.nextLine(), DateTimeFormatter.ofPattern("dd/MM/yyyy")));
+    Mensagem.mensagemComInput("Informe o numero de serie do eletronico");
+    eletronico.setNumeroDeSerie(scanner.nextLine());
 
-    Mensagem.mensagemComInput("Informe a data de fabricação do alimento");
-    alimento.setDataDeFabricacao(LocalDate.parse(scanner.nextLine(), DateTimeFormatter.ofPattern("dd/MM/yyyy")));
+    Mensagem.mensagemComInput("Informe a marca do eletronico");
+    eletronico.setMarca(scanner.nextLine());
 
-    Mensagem.mensagemComInput("Informe o lote de produção");
-    alimento.setLote(scanner.next());
+    Mensagem.exibirMensagemComOpcoes(EnumVoltagem.getAll(), "Escolha voltagem do eletronico");
+    eletronico.setVoltagem(EnumVoltagem.values()[Terminal.validarInteiro(scanner) - 1]);
 
-    Mensagem.mensagemComInput("O alimento possui gluten?");
-    alimento.setGluten(scanner.nextBoolean());
+    Mensagem.mensagemComInput("O eletronico funciona a bateria?");
+    eletronico.setFuncionaABateria(scanner.nextBoolean());
 
-    Mensagem.mensagemComInput("O alimento possui lactose?");
-    alimento.setLactose(scanner.nextBoolean());
+    Mensagem.mensagemComInput("O eletronico possui seguro?");
+    eletronico.setPossuiSeguro(scanner.nextBoolean());
 
-    return (T) alimento;
+    return (T) eletronico;
   }
 
   @Override
   public void excluir(int codigo) {
-    for (Alimento alimento : catalogo) {
-      if(alimento.getCodigo() == codigo) {
-        catalogo.remove(alimento);
-        System.out.println("Elemento removido");
+
+    for (Eletronico eletronico : catalogo) {
+      if(eletronico.getCodigo() == codigo) {
+        catalogo.remove(eletronico);
+        System.out.println("Eletronico removido");
         break;
       }
     }
-    System.out.println(this.catalogo.toString());
   }
 
 }

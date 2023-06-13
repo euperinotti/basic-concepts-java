@@ -4,14 +4,6 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Terminal {
-  public static void exibirMensagemComOpcoes(String[] array, String mensagem) {
-    int i;
-    System.out.println("\n" + mensagem);
-    for (i = 0; i < array.length; i++) {
-      System.out.println("[" + (i + 1) + "] " + array[i]);
-    }
-    Mensagem.campoDeInput();
-  }
 
   public static int validarInteiro(Scanner scanner) {
     String str = scanner.nextLine();

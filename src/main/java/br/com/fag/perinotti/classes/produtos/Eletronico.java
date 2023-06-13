@@ -4,6 +4,8 @@ import br.com.fag.perinotti.enums.EnumVoltagem;
 import br.com.fag.perinotti.interfaces.Vendavel;
 
 public class Eletronico extends ProdutoBase implements Vendavel{
+  private int codigo;
+  private static int proximoCodigo = 1;
   private String numeroDeSerie;
   private String marca;
   private EnumVoltagem voltagem;
@@ -17,6 +19,7 @@ public class Eletronico extends ProdutoBase implements Vendavel{
     this.voltagem = voltagem;
     this.funcionaABateria = funcionaABateria;
     this.possuiSeguro = possuiSeguro;
+    this.codigo = proximoCodigo++;
   }
 
   public Eletronico(String nome, Float preco, Integer estoque, String numeroDeSerie, String marca, EnumVoltagem voltagem, boolean funcionaABateria) {
@@ -25,6 +28,7 @@ public class Eletronico extends ProdutoBase implements Vendavel{
     this.marca = marca;
     this.voltagem = voltagem;
     this.funcionaABateria = funcionaABateria;
+    this.codigo = proximoCodigo++;
   }
 
   public void ligar(EnumVoltagem voltagem) {
@@ -58,6 +62,10 @@ public class Eletronico extends ProdutoBase implements Vendavel{
     "funcionaABateria: " + this.funcionaABateria + "\n" +
     "possuiSeguro: " + this.possuiSeguro +
     "\n}\n";
+  }
+
+  public int getCodigo() {
+    return this.codigo;
   }
 
   public String getNumeroDeSerie() {

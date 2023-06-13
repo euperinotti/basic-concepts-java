@@ -14,4 +14,15 @@ public enum EnumVoltagem {
   public String getVoltagem() {
     return this.voltagem;
   }
+
+  public static String[] getAll() {
+    EnumVoltagem[] opcoes = EnumVoltagem.values();
+    String[] array = new String[opcoes.length];
+    int i;
+    for(i = 0; i < array.length; i++) {
+      array[i] = opcoes[i].getVoltagem();
+    }
+
+    return array;
+  }
 }
