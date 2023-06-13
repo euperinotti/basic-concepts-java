@@ -5,36 +5,34 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import br.com.fag.perinotti.classes.catalogos.CatalogoAlimento;
 import br.com.fag.perinotti.classes.produtos.Alimento;
+import br.com.fag.perinotti.classes.produtos.Eletronico;
 import br.com.fag.perinotti.classes.produtos.ProdutoBase;
+import br.com.fag.perinotti.enums.EnumVoltagem;
 import br.com.fag.perinotti.interfaces.Controller;
 import br.com.fag.perinotti.utils.Mensagem;
 
-public class AlimentoControlador implements Controller {
-  private ArrayList<Alimento> catalogo = CatalogoAlimento.catalago();
-
+public class EletronicoControlador implements Controller {
+  
   @Override
   public void criar() {
     Scanner scanner = new Scanner(System.in);
     String nome;
-    Float preco;
     int estoque;
-    LocalDate dataDeValidade;
-    LocalDate dataDeFabricacao;
-    String lote;
-    Float pesoEmGramas;
-    boolean gluten;
-    boolean lactose;
+    Float preco;
+    String numeroDeSerie;
+    String marca;
+    EnumVoltagem voltagem;
+    boolean funcionaABateria;
+    boolean possuiSeguro;
 
-
-    Mensagem.mensagemComInput("Informe o nome do alimento");
+    Mensagem.mensagemComInput("Informe o nome do eletronico");
     nome = scanner.next();
 
-    Mensagem.mensagemComInput("Informe o preço do alimento");
+    Mensagem.mensagemComInput("Informe o preco do eletronico");
     preco = scanner.nextFloat();
 
-    Mensagem.mensagemComInput("Informe a quantidade desse alimento em estoque");
+    Mensagem.mensagemComInput("Informe a quantidade desse eletronico em estoque");
     estoque = scanner.nextInt();
     
     scanner.nextLine();
@@ -48,16 +46,13 @@ public class AlimentoControlador implements Controller {
     Mensagem.mensagemComInput("Informe o lote de produção");
     lote = scanner.next();
 
-    Mensagem.mensagemComInput("Informe o peso do alimento (em gramas)");
-    pesoEmGramas = scanner.nextFloat();
-
     Mensagem.mensagemComInput("O alimento possui gluten?");
     gluten = scanner.nextBoolean();
 
     Mensagem.mensagemComInput("O alimento possui lactose?");
     lactose = scanner.nextBoolean();
 
-    Alimento novoAlimento = new Alimento(nome, preco, estoque, dataDeValidade, dataDeFabricacao, lote, pesoEmGramas, gluten, lactose);
+    Eletronico novoEletronico = new Eletronico(nome, pesoEmGramas, null, nome, lote, null, lactose);
 
     this.catalogo.add(novoAlimento);
   }
@@ -87,9 +82,6 @@ public class AlimentoControlador implements Controller {
 
     Mensagem.mensagemComInput("Informe o peso do alimento (em gramas)");
     alimento.setPesoEmGramas(scanner.nextFloat());
-
-    Mensagem.mensagemComInput("Informe o preço do alimento");
-    alimento.setPreco(scanner.nextFloat());
 
     Mensagem.mensagemComInput("Informe a quantidade desse alimento em estoque");
     alimento.setEstoque(scanner.nextInt());
@@ -125,5 +117,5 @@ public class AlimentoControlador implements Controller {
     }
     System.out.println(this.catalogo.toString());
   }
-  
+
 }
