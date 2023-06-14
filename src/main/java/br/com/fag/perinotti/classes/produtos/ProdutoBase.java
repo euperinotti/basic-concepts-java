@@ -17,6 +17,19 @@ public abstract class ProdutoBase {
     return this.getEstoque() > 0;
   }
 
+  public void aplicarDesconto(int procentagemDeDesconto) {
+    if (verificarDesconto(procentagemDeDesconto)) {
+      
+    }
+  };
+
+  public boolean verificarDesconto(int procentagemDeDesconto) {
+    if (procentagemDeDesconto >= 0 && procentagemDeDesconto <= 100) {
+      return true;
+    }
+    return false;
+  }
+
   public String getNome() {
     return this.nome;
   }
