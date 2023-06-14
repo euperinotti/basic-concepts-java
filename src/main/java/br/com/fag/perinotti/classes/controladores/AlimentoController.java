@@ -11,7 +11,7 @@ import br.com.fag.perinotti.classes.produtos.ProdutoBase;
 import br.com.fag.perinotti.interfaces.Controller;
 import br.com.fag.perinotti.utils.Mensagem;
 
-public class AlimentoControlador implements Controller {
+public class AlimentoController implements Controller {
   private ArrayList<Alimento> catalogo = CatalogoAlimento.catalago();
 
   @Override

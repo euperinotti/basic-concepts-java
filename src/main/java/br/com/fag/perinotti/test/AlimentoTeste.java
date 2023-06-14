@@ -2,7 +2,7 @@ package br.com.fag.perinotti.test;
 
 import java.time.LocalDate;
 
-import br.com.fag.perinotti.classes.controladores.AlimentoControlador;
+import br.com.fag.perinotti.classes.controladores.AlimentoController;
 import br.com.fag.perinotti.classes.produtos.Alimento;
 
 public class AlimentoTeste {
@@ -18,7 +18,7 @@ public class AlimentoTeste {
 
     System.out.println(novoAlimento.estaVencido());
 
-    AlimentoControlador alimentoController = new AlimentoControlador();
+    AlimentoController alimentoController = new AlimentoController();
 
     Alimento alimento = alimentoController.buscar(1); 
 

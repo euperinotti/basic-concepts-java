@@ -11,7 +11,7 @@ import br.com.fag.perinotti.interfaces.Controller;
 import br.com.fag.perinotti.utils.Mensagem;
 import br.com.fag.perinotti.utils.Terminal;
 
-public class EletronicoControlador implements Controller {
+public class EletronicoController implements Controller {
   private ArrayList<Eletronico> catalogo = CatalogoEletronico.catalago();
   
   @Override
