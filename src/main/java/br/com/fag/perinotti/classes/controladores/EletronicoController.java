@@ -15,7 +15,7 @@ public class EletronicoController implements Controller {
   private ArrayList<Eletronico> catalogo = CatalogoEletronico.catalago();
   
   @Override
-  public void criar() {
+  public <T> T criar() {
     Scanner scanner = new Scanner(System.in);
     String nome;
     int estoque;
@@ -52,8 +52,11 @@ public class EletronicoController implements Controller {
     Mensagem.mensagemComInput("O eletronico possui seguro?");
     possuiSeguro = scanner.nextBoolean();
 
-    Eletronico novoEletronico = new Eletronico(nome, preco, estoque, numeroDeSerie, marca, voltagem, funcionaABateria, possuiSeguro);
+    return (T) new Eletronico(nome, preco, estoque, numeroDeSerie, marca, voltagem, funcionaABateria, possuiSeguro);
+  }
 
+  public void adicionarAoCatalogo() {
+    Eletronico novoEletronico = this.criar();
     this.catalogo.add(novoEletronico);
   }
 

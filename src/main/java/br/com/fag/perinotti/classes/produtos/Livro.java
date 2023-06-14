@@ -4,6 +4,8 @@ import br.com.fag.perinotti.enums.EnumFormatoDoLivro;
 import br.com.fag.perinotti.interfaces.Vendavel;
 
 public class Livro extends ProdutoBase implements Vendavel {
+  private int codigo;
+  private static int proximoCodigo = 1;
   private String autor;
   private String genero;
   private String editora;
@@ -23,6 +25,7 @@ public class Livro extends ProdutoBase implements Vendavel {
     this.amassado = false;
     this.formato = formato;
     this.numeroDePaginas = numeroDePaginas;
+    this.codigo = proximoCodigo++;
   }
 
   public Livro(String nome, Float preco, Integer estoque, String autor, String editora, String classificacao, EnumFormatoDoLivro formato) {
@@ -32,6 +35,7 @@ public class Livro extends ProdutoBase implements Vendavel {
     this.classificacaoIndicativa = classificacao;
     this.amassado = false;
     this.formato = formato;
+    this.codigo = proximoCodigo++;
   }
 
   @Override
@@ -49,6 +53,10 @@ public class Livro extends ProdutoBase implements Vendavel {
   @Override
   public boolean checarEstado() {
     return possuiEstoque() && !getAmassado();
+  }
+
+  public int getCodigo() {
+    return this.codigo;
   }
 
   public EnumFormatoDoLivro getFormato() {

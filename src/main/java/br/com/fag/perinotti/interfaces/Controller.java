@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import br.com.fag.perinotti.classes.produtos.ProdutoBase;
 
 public interface Controller {
-  public void criar();
+  public <T> T criar();
 
   public <T> T buscar(int codigo);
 

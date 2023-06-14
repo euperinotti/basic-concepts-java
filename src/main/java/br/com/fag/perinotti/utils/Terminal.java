@@ -30,4 +30,13 @@ public class Terminal {
 
     return input;
   }
+
+  public static int validarElementoSelecionado(String[] lista, int input, Scanner scanner) {
+    while(input > lista.length) {
+      Mensagem.mensagemComInput("Informe um número válido");
+      input = Terminal.validarInteiro(scanner);
+    }
+
+    return input;
+  }
 }

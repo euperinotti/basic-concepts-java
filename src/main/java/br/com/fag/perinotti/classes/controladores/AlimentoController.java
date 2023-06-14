@@ -15,7 +15,7 @@ public class AlimentoController implements Controller {
   private ArrayList<Alimento> catalogo = CatalogoAlimento.catalago();
 
   @Override
-  public void criar() {
+  public <T> T criar() {
     Scanner scanner = new Scanner(System.in);
     String nome;
     Float preco;
@@ -57,8 +57,12 @@ public class AlimentoController implements Controller {
     Mensagem.mensagemComInput("O alimento possui lactose?");
     lactose = scanner.nextBoolean();
 
-    Alimento novoAlimento = new Alimento(nome, preco, estoque, dataDeValidade, dataDeFabricacao, lote, pesoEmGramas, gluten, lactose);
+    return (T) new Alimento(nome, preco, estoque, dataDeValidade, dataDeFabricacao, lote, pesoEmGramas, gluten, lactose);
+   
+  }
 
+  public void adicionarAoCatalogo() {
+    Alimento novoAlimento = this.criar();
     this.catalogo.add(novoAlimento);
   }
 
