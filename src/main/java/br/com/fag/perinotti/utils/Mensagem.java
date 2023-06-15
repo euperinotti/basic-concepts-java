@@ -5,8 +5,8 @@ public class Mensagem {
     System.out.print("Input...: ");
   }
 
-  public static void mensagem(String msg)  {
-    System.out.println("\n" + msg);
+  public static void mensagem(String mensagem)  {
+    System.out.println("\n" + mensagem);
     try {
       Thread.sleep(1000);
     } catch (InterruptedException e) {
@@ -23,8 +23,8 @@ public class Mensagem {
     Mensagem.campoDeInput();
   }
 
-  public static void mensagemComInput(String msg) {
-    mensagem(msg);
+  public static void mensagemComInput(String mensagem) {
+    mensagem(mensagem);
     campoDeInput();
   }
 

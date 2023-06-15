@@ -5,12 +5,14 @@ public abstract class ProdutoBase {
   private Float preco;
   private String categoria;
   private Integer estoque;
+  private Integer desconto;
 
   public ProdutoBase(String nome, Float preco, Integer estoque) {
     this.nome = nome;
     this.preco = preco;
     this.estoque = estoque;
     this.categoria = this.getClass().getSimpleName();
+    this.desconto = 0;
   }
 
   public boolean possuiEstoque() {
@@ -19,7 +21,8 @@ public abstract class ProdutoBase {
 
   public void aplicarDesconto(int procentagemDeDesconto) {
     if (verificarDesconto(procentagemDeDesconto)) {
-      
+      this.desconto = procentagemDeDesconto;
+      this.setPreco(this.preco * (procentagemDeDesconto / 100));
     }
   };
 
@@ -28,6 +31,14 @@ public abstract class ProdutoBase {
       return true;
     }
     return false;
+  }
+
+  public Integer getDesconto() {
+    return this.desconto;
+  }
+
+  public void setDesconto(Integer desconto) {
+    this.desconto = desconto;
   }
 
   public String getNome() {

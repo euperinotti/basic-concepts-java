@@ -52,12 +52,14 @@ public class EletronicoController implements Controller {
     Mensagem.mensagemComInput("O eletronico possui seguro?");
     possuiSeguro = scanner.nextBoolean();
 
-    return (T) new Eletronico(nome, preco, estoque, numeroDeSerie, marca, voltagem, funcionaABateria, possuiSeguro);
+    Eletronico novoEletronico = new Eletronico(nome, preco, estoque, numeroDeSerie, marca, voltagem, funcionaABateria, possuiSeguro);
+    this.catalogo.add(novoEletronico);
+
+    return (T) novoEletronico;
   }
 
   public void adicionarAoCatalogo() {
-    Eletronico novoEletronico = this.criar();
-    this.catalogo.add(novoEletronico);
+    
   }
 
   @Override

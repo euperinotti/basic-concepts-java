@@ -25,24 +25,6 @@ public class Alimento extends ProdutoBase implements Vendavel{
     this.codigo = proximoCodigo++;
   }
 
-  public Alimento(String nome, Float preco, Integer estoque, LocalDate dataDeValidade, Float pesoEmGramas, boolean gluten, boolean lactose) {
-    super(nome, preco, estoque);
-    this.dataDeValidade = dataDeValidade;
-    this.pesoEmGramas = pesoEmGramas;
-    this.gluten = gluten;
-    this.lactose = lactose;
-    this.codigo = proximoCodigo++;
-  }
-
-  public Alimento(String nome, Float preco, Integer estoque, LocalDate dataDeValidade, Float pesoEmGramas) {
-    super(nome, preco, estoque);
-    this.dataDeValidade = dataDeValidade;
-    this.pesoEmGramas = pesoEmGramas;
-    this.gluten = false;
-    this.lactose = false;
-    this.codigo = proximoCodigo++;
-  }
-
   @Override
   public boolean checarEstado() {
     return possuiEstoque() && !estaVencido();

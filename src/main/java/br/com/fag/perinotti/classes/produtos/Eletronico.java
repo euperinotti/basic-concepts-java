@@ -22,15 +22,6 @@ public class Eletronico extends ProdutoBase implements Vendavel{
     this.codigo = proximoCodigo++;
   }
 
-  public Eletronico(String nome, Float preco, Integer estoque, String numeroDeSerie, String marca, EnumVoltagem voltagem, boolean funcionaABateria) {
-    super(nome, preco, estoque);
-    this.numeroDeSerie = numeroDeSerie;
-    this.marca = marca;
-    this.voltagem = voltagem;
-    this.funcionaABateria = funcionaABateria;
-    this.codigo = proximoCodigo++;
-  }
-
   public void ligar(EnumVoltagem voltagem) {
     if (voltagem.getVoltagem().equals(this.voltagem.getVoltagem())) {
       System.out.println("Dispositivo ligado");

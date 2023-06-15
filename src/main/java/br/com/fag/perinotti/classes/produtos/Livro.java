@@ -28,16 +28,6 @@ public class Livro extends ProdutoBase implements Vendavel {
     this.codigo = proximoCodigo++;
   }
 
-  public Livro(String nome, Float preco, Integer estoque, String autor, String editora, String classificacao, EnumFormatoDoLivro formato) {
-    super(nome, preco, estoque);
-    this.autor = autor;
-    this.editora = editora;
-    this.classificacaoIndicativa = classificacao;
-    this.amassado = false;
-    this.formato = formato;
-    this.codigo = proximoCodigo++;
-  }
-
   @Override
   public String toString() {
     return "{\n" + 

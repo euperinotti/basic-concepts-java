@@ -14,11 +14,6 @@ import br.com.fag.perinotti.utils.Terminal;
 public class LivroController implements Controller {
 
   private ArrayList<Livro> catalogo = CatalogoLivro.catalago();
-
-  public void adicionarAoCatalogo() {
-    Livro novoLivro = this.criar();
-    this.catalogo.add(novoLivro);
-  }
   
   @Override
   public <T> T criar() {
@@ -67,7 +62,10 @@ public class LivroController implements Controller {
     Mensagem.mensagemComInput("Informe o número de páginas do livro");
     numeroDePaginas = Terminal.validarInteiro(scanner);
 
-    return (T) new Livro(nome, preco, estoque, autor, genero, editora, edicao, classificacao, formato, numeroDePaginas);
+    Livro novoLivro = new Livro(nome, preco, estoque, autor, genero, editora, edicao, classificacao, formato, numeroDePaginas);
+    this.catalogo.add(novoLivro);
+
+    return (T) novoLivro;
   }
 
   @Override

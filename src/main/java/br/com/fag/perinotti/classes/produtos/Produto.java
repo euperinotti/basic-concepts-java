@@ -4,7 +4,7 @@ import br.com.fag.perinotti.interfaces.Vendavel;
 
 public class Produto extends ProdutoBase implements Vendavel {
   private int codigo;
-  private static  int proximoCodigo = 0;
+  private static  int proximoCodigo = 1;
   private boolean inflamavel;
   private boolean toxico;
   private boolean alcoolico;
@@ -14,12 +14,21 @@ public class Produto extends ProdutoBase implements Vendavel {
     this.inflamavel = inflamavel;
     this.toxico = toxico;
     this.alcoolico = alcoolico;
-    this.codigo = ++proximoCodigo;
+    this.codigo = proximoCodigo++;
+  }
+
+  @Override
+  public boolean vender() {
+    if(checarEstado()) {
+      aplicarDesconto(20);
+    }
+
+    return true;
   }
 
   @Override
   public boolean checarEstado() {
-    return !this.inflamavel;
+    return this.possuiEstoque() && !this.inflamavel;
   }
 
   @Override
