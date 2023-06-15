@@ -57,13 +57,11 @@ public class AlimentoController implements Controller {
     Mensagem.mensagemComInput("O alimento possui lactose?");
     lactose = scanner.nextBoolean();
 
-    return (T) new Alimento(nome, preco, estoque, dataDeValidade, dataDeFabricacao, lote, pesoEmGramas, gluten, lactose);
-   
-  }
-
-  public void adicionarAoCatalogo() {
-    Alimento novoAlimento = this.criar();
+    Alimento novoAlimento = new Alimento(nome, preco, estoque, dataDeValidade, dataDeFabricacao, lote, pesoEmGramas, gluten, lactose);
     this.catalogo.add(novoAlimento);
+
+    return (T) novoAlimento;
+   
   }
 
   @Override

@@ -3,8 +3,9 @@ package br.com.fag.perinotti.enums;
 public enum EnumOperacoes {
   CADASTRAR("Cadastrar um produto"),
   VER_PRODUTOS("Ver produtos"),
-  EDITAR_PRODUTO("Criar um produto"),
-  EXCLUIR("Excluir um produto");
+  EDITAR_PRODUTO("Editar um produto"),
+  EXCLUIR("Excluir um produto"),
+  SAIR("Sair");
 
   private final String operacao;
 
