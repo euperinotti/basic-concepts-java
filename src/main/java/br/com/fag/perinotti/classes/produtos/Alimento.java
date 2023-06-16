@@ -34,6 +34,7 @@ public class Alimento extends ProdutoBase implements Vendavel{
   public String toString() {
     return "{" + 
     super.toString() +
+    "codigo: " + this.codigo + "\n" + 
     "dataDeValidade: " + this.dataDeValidade + "\n" + 
     "dataDeFabricacao: " + this.dataDeFabricacao + "\n" +
     "lote: " + this.lote + "," + 

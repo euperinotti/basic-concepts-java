@@ -3,5 +3,6 @@
     "src/main/java/test",
     "src",
     "src/main/java"
-  ]
+  ],
+  "codesnap.boxShadow": "none"
 }

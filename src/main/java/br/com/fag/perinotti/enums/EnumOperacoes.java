@@ -5,6 +5,7 @@ public enum EnumOperacoes {
   VER_PRODUTOS("Ver produtos"),
   EDITAR_PRODUTO("Editar um produto"),
   EXCLUIR("Excluir um produto"),
+  VENDER("Vender um produto"),
   SAIR("Sair");
 
   private final String operacao;

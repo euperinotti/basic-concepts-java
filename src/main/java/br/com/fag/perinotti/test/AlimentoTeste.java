@@ -20,10 +20,10 @@ public class AlimentoTeste {
 
     AlimentoController alimentoController = new AlimentoController();
 
-    Alimento alimento = alimentoController.buscar(1); 
+    Alimento alimento = alimentoController.buscar(2); 
 
     System.out.println(alimento.getNome());
 
-    alimentoController.excluir(1);
+    alimentoController.excluir(2);
   }
 }

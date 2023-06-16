@@ -13,7 +13,8 @@ public class EletronicoTeste {
     System.out.println(novoEletronico.possuiEstoque());
     System.out.println(novoEletronico.getCategoria());
     novoEletronico.setEstoque(0);
-    System.out.println(EnumVoltagem.V220.getVoltagem());
+    System.out.println(novoEletronico.possuiEstoque());
+    // System.out.println(EnumVoltagem.V220.getVoltagem());
 
     Eletronico outroEletronico = new Eletronico("Celular", 600f, 0, "BBB1", "Samsung", EnumVoltagem.V220, true, true);
 
