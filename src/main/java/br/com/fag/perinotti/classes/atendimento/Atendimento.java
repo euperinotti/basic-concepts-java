@@ -38,9 +38,11 @@ public class Atendimento {
           System.out.println(controller.buscarTodos().toString());
           break;
         case 2:
+          Mensagem.mensagemComInput("Informe o código do produto para editar");
           controller.editar(Terminal.validarInteiro(scanner));
           break;
         case 3:
+          Mensagem.mensagemComInput("Informe o código do produto para excluir");
           controller.excluir(Terminal.validarInteiro(scanner));
           break;
         case 4:
@@ -52,4 +54,5 @@ public class Atendimento {
 
     scanner.close();
   }
+
 }
