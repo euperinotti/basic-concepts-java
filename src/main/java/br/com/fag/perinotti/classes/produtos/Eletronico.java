@@ -1,9 +1,13 @@
 package br.com.fag.perinotti.classes.produtos;
 
+import java.util.Scanner;
+
 import br.com.fag.perinotti.enums.EnumVoltagem;
 import br.com.fag.perinotti.interfaces.Vendavel;
+import br.com.fag.perinotti.utils.Mensagem;
+import br.com.fag.perinotti.utils.Terminal;
 
-public class Eletronico extends ProdutoBase implements Vendavel{
+public class Eletronico extends ProdutoBase implements Vendavel {
   private int codigo;
   private static int proximoCodigo = 1;
   private String numeroDeSerie;
@@ -35,6 +39,27 @@ public class Eletronico extends ProdutoBase implements Vendavel{
       System.out.println("O dispositivo tem bateria");
     } else {
       System.out.println("O dispositivo não tem bateria");
+    }
+  }
+
+  @Override
+  public void vender() {
+    if (this.possuiEstoque() && this.checarEstado()) {
+      Mensagem.mensagemComInput("Deseja adicionar um desconto ao produto?\n[1] Sim\n[2] Não");
+
+      Scanner scanner = new Scanner(System.in);
+      int input = 0;
+      input = Terminal.validarInteiro(scanner) - 1;
+
+      switch(input) {
+        case 1:
+          Mensagem.mensagemComInput("Quantos porcento de desconto você deseja?");
+          input = Terminal.validarInteiro(scanner);
+          this.aplicarDesconto(input);
+          break;
+        case 2:
+          break;
+      }
     }
   }
 
