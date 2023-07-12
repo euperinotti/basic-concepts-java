@@ -99,5 +99,11 @@ public class Alimento extends ProdutoBase implements Vendavel{
   public void setLactose(boolean lactose) {
     this.lactose = lactose;
   }
+
+  @Override
+  public boolean vender() {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'vender'");
+  }
   
 }
